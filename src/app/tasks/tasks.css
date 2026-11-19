@@ -1,0 +1,19 @@
+h2 {
+  color: #2563eb;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #f1f5f9;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.empty {
+  color: gray;
+}

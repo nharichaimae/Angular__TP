@@ -1,0 +1,21 @@
+<h2>Mes tâches</h2>
+
+@if (tasks.length === 0) {
+  <p class="empty">Aucune tâche pour l’instant</p>
+} @else {
+  <ul>
+    @for (task of tasks; track task.id) {
+      <li>
+        <p> ID : {{ task.id }}</p>
+
+        <p [style.color]="task.id | titleColor">
+          Titre : {{ task.title | uppercase }}
+        </p>
+
+        <p>Minuscule : {{ task.title | lowercase }}</p>
+
+        <p>Date : {{ task.date | date:'dd/MM/yyyy' }}</p>
+      </li>
+    }
+  </ul>
+}
