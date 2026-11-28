@@ -1,7 +1,7 @@
-<h1>{{ title }}</h1>
-
-<button (click)="rename()">Renommer</button>
-
-<p *ngIf="canDelete">
-  Suppression autorisée
-</p>
+<header class="header">
+  <h1>Ma Boutique</h1>
+  <nav>
+    <a routerLink="/catalogue">Catalogue</a>
+    <a routerLink="/tasks">Tasks</a>
+  </nav>
+</header>

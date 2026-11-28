@@ -1,0 +1,30 @@
+<h2>Catalogue</h2>
+
+<div class="liste">
+  @for (p of produits(); track p.id) {
+    <div class="carte">
+      <h3>{{ p.nom }}</h3>
+      <p>{{ p.prix }} DH</p>
+      <button (click)="ajouter(p)">Ajouter au panier</button>
+    </div>
+  }
+</div>
+
+<hr />
+
+<h2>Panier ({{ panier.nombreArticles() }})</h2>
+
+@if (panier.nombreArticles() === 0) {
+  <p>Votre panier est vide.</p>
+} @else {
+  <ul>
+    @for (a of panier.articles(); track $index) {
+      <li>
+        {{ a.nom }} : {{ a.prix }} DH
+        <button (click)="panier.retirer(a.id)">✕</button>
+      </li>
+    }
+  </ul>
+  <p><strong>Total : {{ panier.total() }} DH</strong></p>
+  <button (click)="panier.vider()">Vider le panier</button>
+}
